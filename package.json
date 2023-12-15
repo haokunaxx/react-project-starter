@@ -10,11 +10,13 @@
     "postinstall": "husky install",
     "husky-prepare": "npx husky add .husky/pre-commit 'npm run pre-check'",
     "eslint": "eslint",
-    "pre-check": "tsc && npx lint-staged"
+    "pre-check": "tsc && npx lint-staged",
+    "stylelint": "stylelint"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "stylelint-config-prettier": "9.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -28,12 +30,19 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "husky": "^8.0.3",
     "lint-staged": "12.5.0",
+    "stylelint": "14.9.0",
+    "stylelint-config-recess-order": "3.0.0",
+    "stylelint-config-standard": "26.0.0",
+    "stylelint-order": "5.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "npm run eslint"
+    ],
+    "src/**/*.{css,less,scss,postcss}": [
+      "npm run stylelint"
     ]
   },
   "config": {
